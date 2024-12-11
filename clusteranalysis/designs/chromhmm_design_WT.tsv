@@ -1,0 +1,11 @@
+mouse_cell	laminA_3A6_16	chipseq_laminA_3A6_WT_16.bam	chipseq_INPUT_WT_16.bam 
+mouse_cell	laminA_3A6_20	chipseq_laminA_3A6_WT_20.bam	chipseq_INPUT_WT_20.bam
+mouse_cell	laminA_E1_16	chipseq_laminA_E1_WT_16.bam	chipseq_INPUT_WT_16.bam
+mouse_cell	laminA_E1_20	chipseq_laminA_E1_WT_20.bam	chipseq_INPUT_WT_20.bam
+mouse_cell	BRG1_16	chipseq_BRG1_WT_16.bam	chipseq_INPUT_WT_16.bam
+mouse_cell	BRG1_20	chipseq_BRG1_WT_20.bam	chipseq_INPUT_WT_20.bam
+mouse_cell	CHD4_16	chipseq_CHD4_WT_16.bam	chipseq_INPUT_WT_16.bam
+mouse_cell	CHD4_20	chipseq_CHD4_WT_20.bam	chipseq_INPUT_WT_20.bam
+mouse_cell	RNA	rnaseq_WT.bam
+mouse_cell	ATAC	atacseq_WT.bam
+
