@@ -12,6 +12,19 @@ from sklearn.preprocessing import StandardScaler
 from . import sort
 
 
+# taken from https://matplotlib.org/2.0.2/users/colormapnorms.html
+class MidpointNormalize(Normalize):
+    def __init__(self, vmin=None, vmax=None, midpoint=None, clip=False):
+        self.midpoint = midpoint
+        Normalize.__init__(self, vmin, vmax, clip)
+
+    def __call__(self, value, clip=None):
+        # I'm ignoring masked values and all kinds of edge cases to make a
+        # simple example...
+        x, y = [self.vmin, self.midpoint, self.vmax], [0, 0.5, 1]
+        return np.ma.masked_array(np.interp(value, x, y))
+
+
 def add_margin(xmin, xmax, ymin, ymax):
     margin = ((xmax - xmin) + (ymax - ymin)) / 2 * 0.1
     return xmin - margin, xmax + margin, ymin - margin, ymax + margin
@@ -279,9 +292,8 @@ def plot_recluster_data(
 def plot_matrix(matrix, row_names, col_names, ax, vmin, vmax):
     ax.imshow(
         matrix,
-        vmin = vmin,
-        vmax = vmax,
         cmap = 'coolwarm',
+        norm = MidpointNormalize(vmin = vmin, vmax = vmax, midpoint = 0),
         interpolation = None,
         aspect = 'auto'
     )
